@@ -1,12 +1,12 @@
 package heapandquick;
 
-import java.util.Date;
+//import java.util.Date;
 
-public class QuickSort2 {
+public class QuickSort {
 	int [] values;
 	int splitVal;
 	int splitValL;
-	public QuickSort2(int[] array) {
+	public QuickSort(int[] array) {
 		values = array;
 	}
 	public void sort() {
@@ -68,8 +68,8 @@ public class QuickSort2 {
 	}
 	public static void main(String[] args) {
 		int [] ex = {9,20,6,10,14,8,60,11};
-		QuickSort2 qs = new QuickSort2(ex);
-		Date d = new Date();
+		QuickSort qs = new QuickSort(ex);
+		//Date d = new Date();
 		/*
 		System.out.println("\nBefore\nLength: "+ex.length);
 		*/

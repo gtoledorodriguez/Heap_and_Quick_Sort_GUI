@@ -66,7 +66,7 @@ public class QuickSort {
 		sorting = sorting + "Sorted List: \n";
 		for(int i=0;i<values.length;i++) {
 			sorting = sorting + "  "+values[i];
-			System.out.print("  "+values[i]);
+			//System.out.print("  "+values[i]);
 		}
 		sorting = sorting +"\n";
 		return sorting;
@@ -80,28 +80,15 @@ public class QuickSort {
 			ex[i] = rand.nextInt(SIZE);
 		}
 		QuickSort qs = new QuickSort(ex);
-		//Date d = new Date();
-		/*
-		System.out.println("\nBefore\nLength: "+ex.length);
-		*/
-		System.out.println("Unsorted List");
-		/*for(int i=0;i<ex.length;i++) {
-			System.out.print("  "+ex[i]);
-		}*/
+		
 		
 		long sTime = System.nanoTime();
 		qs.sort();
 		long eTime = System.nanoTime();
 		int[] exa = qs.getValues();
 		
-		//System.out.println("\nAfter\nLength: "+exa.length);
-		System.out.println("\nSorted List");
-		for(int i=0;i<exa.length;i++) {
-			System.out.print("  "+exa[i]);
-		}
-		System.out.println("\n\nStart Time: "+ sTime + "\nEnd Time: "+ eTime +"\nTotal time: " + (eTime-sTime));
 		
-		System.out.println("\n"+qs.toString());
+		//System.out.println("\n"+qs.toString());
 		/**/
 	}
 }

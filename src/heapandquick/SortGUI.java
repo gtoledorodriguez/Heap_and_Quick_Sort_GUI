@@ -18,7 +18,7 @@ import javax.swing.JScrollPane;
 
 import heapandquick.Session;
 
-public class SortGUI extends JFrame implements ActionListener {
+public class SortGUI extends JFrame implements ActionListener{
 	// height of the frame
 	private static final int DEFAULT_HEIGHT = 584;
 	// width of the frame.
@@ -92,7 +92,8 @@ public class SortGUI extends JFrame implements ActionListener {
 		messageToUser.setBounds(56, 424, 600, 30);
 		
 		// numbers is set to the random numbers array generated in Session
-		numbers = new JTextArea();
+		session.randomNumbers();
+		numbers = new JTextArea(session.getNumbersString());
 		// Adding the array to the panel
 		panel.add(numbers);
 		// Setting the font
@@ -168,12 +169,12 @@ public class SortGUI extends JFrame implements ActionListener {
 		btnReset.setForeground(darkGray);
 		// Setting the background color
 		btnReset.setBackground(red);
-		// Addint the button to the panel
+		// Adding the button to the panel
 		panel.add(btnReset);
 		
 		// Making the insertion button
 		btnHeap = new JButton();
-		// Addint a listener
+		// Adding a listener
 		btnHeap.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -199,7 +200,7 @@ public class SortGUI extends JFrame implements ActionListener {
 				// It is calculated in session
 				//ArrayList<int[]> sortedSeq = session.insertion();
 				// s is the display string
-				String s = HeapSort.heapsort(values);
+				String s = HeapSort.heapsort(session.getNumbers());
 				// This runs through the sortedSeq array
 				/*
 				for (int i = 0; i < sortedSeq.size(); i++) {
@@ -215,6 +216,7 @@ public class SortGUI extends JFrame implements ActionListener {
 					numbers2.setText(s);
 				}	
 				*/
+				numbers2.setText(s);
 				// Updating the message to the user
 				messageToUser.setText(session.getMessage());
 			}

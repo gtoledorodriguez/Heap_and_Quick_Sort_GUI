@@ -3,11 +3,12 @@ package heapandquick;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Session {
+public class Session implements Values{
 		// message is the message that will be displayed to the user
 		private String message;
 		// numbers is the unsorted random array to be displayed to the user
 		private String numbers;
+		
 		/**
 		 * constructor
 		 */
@@ -22,18 +23,19 @@ public class Session {
 		public String getMessage() {
 			return message;
 		}
+		public int[] getNumbers() {
+			return values;
+		}
 		/**
 		 * getNumbers() converts the random unsorted number array to a string
 		 * @return numbers, random unsorted array
 		 */
-		/*
-		public String getNumbers() {
+		public String getNumbersString() {
 			// resetting the welcome message
 			message = "Welcome! Click Insert or Merge to sort the above numbers.";
 			// resetting the numbers array
 			numbers = "";
 			// Calling the random numbers method
-			randomNumbers();
 			// Adding each number in the values array to the string
 			for (int i = 0; i < SIZE; i++) {
 				numbers += String.valueOf(values[i]);
@@ -41,12 +43,11 @@ public class Session {
 			// Return the string
 			return numbers;
 		}
-		*/
 		/**
 		 * randomNumbers() calculates an array of random unsorted numbers and puts it in values
 		 * @return values, an array of randomly sorted numbers
 		 */
-		/*
+		
 		public int[] randomNumbers() {
 			// New random
 			Random rand = new Random();
@@ -57,7 +58,7 @@ public class Session {
 		    // Returning values
 		    return values;
 		}
-		*/
+		
 		/**
 		 * insertion() performs the insert method and returns it in ArrayList form
 		 * @return sortedSeq, an arrayList with integer arrays that represent every step in the insertion sort

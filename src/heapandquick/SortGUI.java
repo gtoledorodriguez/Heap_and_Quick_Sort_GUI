@@ -199,7 +199,7 @@ public class SortGUI extends JFrame implements ActionListener {
 				// It is calculated in session
 				//ArrayList<int[]> sortedSeq = session.insertion();
 				// s is the display string
-				String s = "";
+				String s = HeapSort.heapsort(values);
 				// This runs through the sortedSeq array
 				/*
 				for (int i = 0; i < sortedSeq.size(); i++) {

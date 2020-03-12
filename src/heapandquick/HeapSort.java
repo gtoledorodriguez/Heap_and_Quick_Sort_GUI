@@ -46,6 +46,7 @@ public class HeapSort {
 		return max_heap;
 	}
 	static String heapsort(int[] arr) {
+		long sTime = System.nanoTime();
 		String result = build_max_heap(arr);
 		int heap_size = arr.length-1;
 		for (int i = arr.length-1; i > 0; i--) {	
@@ -68,12 +69,15 @@ public class HeapSort {
 		for (int i = 0; i < arr.length; i++) {
 			result = result + arr[i] + " ";
 		}
+		long eTime = System.nanoTime();
+		long tTime = eTime - sTime;
+		result = result + "\nTotal time: " + tTime + " ns";
 		return result;
 	}
 	public static void main(String[] args) {
 		int[] heap2 = {3, 5, 2, 6, 1, 4};
 		int[] heap3 = {4, 1, 3, 2, 16, 9, 10, 14, 8, 7};
-		System.out.println(heapsort(heap3));
+		//System.out.println(heapsort(heap3));
 		//for (int i = 0; i < heap2.length; i++) {
 		//	System.out.print(heap2[i] + " ");
 		//}

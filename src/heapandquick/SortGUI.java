@@ -25,7 +25,7 @@ public class SortGUI extends JFrame implements ActionListener{
 	private static final int DEFAULT_WIDTH = 751;
 	// creating the panel
 	private JPanel panel;
-	// These are the buttons (insertion, merge, and reset)
+	// These are the buttons (heap, quick, and reset)
 	private JButton btnHeap;
 	private JButton btnQuick;
 	private JButton btnReset;
@@ -153,11 +153,10 @@ public class SortGUI extends JFrame implements ActionListener{
 		btnReset.addActionListener(new ActionListener() {
 			// setting the event to be performed
 			public void actionPerformed(ActionEvent e) {
-				// getting the new random unsorted array
-				//numbers.setText(session.getNumbers());
-				// emptying the TextArea
+				// getting the new random unsorted array			
 				session.randomNumbers();
-				numbers.setText(session.getNumbersString());
+				numbers.setText(session.getNumbersString());	
+				// emptying the TextArea
 				numbers2.setText("");
 				// getting the new message to the user
 				messageToUser.setText(session.getMessage());
@@ -180,7 +179,7 @@ public class SortGUI extends JFrame implements ActionListener{
 		btnHeap.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				// Upon clicking the insertion button, the reset button becomes visible
+				// Upon clicking the heap button, the reset button becomes visible
 				btnReset.setVisible(true);
 			}
 		});
@@ -198,10 +197,9 @@ public class SortGUI extends JFrame implements ActionListener{
 		btnHeap.addActionListener(new ActionListener() {
 			// The event to be performed
 			public void actionPerformed(ActionEvent evt) {
-				// s is the display string
+				// s is the display string, which is the sorted array
 				String s = HeapSort.heapsort(session.getNumbers());
-				// This runs through the sortedSeq array
-				
+				// Setting the text to display
 				numbers2.setText(s);
 				// Updating the message to the user
 				messageToUser.setText(session.getMessage());

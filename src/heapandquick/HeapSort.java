@@ -1,5 +1,5 @@
 package heapandquick;
-
+import java.util.*;
 public class HeapSort {
 	static int left(int i) {
 		return 2 * i + 1;
@@ -31,7 +31,12 @@ public class HeapSort {
 		int heap_size = arr.length-1;
 		for (int i = arr.length / 2; i >= 0; i--) {
 			max_heapify(arr, i, heap_size);
+			int count = 0;
 			for (int j = 0; j < arr.length; j++) {
+				if (j == Math.pow(2, count) - 1) {
+					count = count + 1;
+					System.out.println("");
+				}
 				System.out.print(arr[j] + " ");
 			}
 			System.out.println("");
@@ -47,7 +52,12 @@ public class HeapSort {
 			arr[i] = temp;
 			heap_size = heap_size - 1;
 			max_heapify(arr, 0, heap_size);
+			int count = 0;
 			for (int j = 0; j < arr.length; j++) {
+				if (j == Math.pow(2, count) -1) {
+					count = count + 1;
+					System.out.println("");
+				}
 				System.out.print(arr[j] + " ");
 			}
 			System.out.println("");

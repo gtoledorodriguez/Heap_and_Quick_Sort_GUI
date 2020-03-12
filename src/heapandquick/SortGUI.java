@@ -92,9 +92,9 @@ public class SortGUI extends JFrame implements ActionListener {
 		messageToUser.setBounds(56, 424, 600, 30);
 		
 		// numbers is set to the random numbers array generated in Session
-		//numbers = new JTextArea(session.getNumbers());
+		numbers = new JTextArea();
 		// Adding the array to the panel
-	//	panel.add(numbers);
+		panel.add(numbers);
 		// Setting the font
 		numbers.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		// Making it visible
@@ -182,7 +182,7 @@ public class SortGUI extends JFrame implements ActionListener {
 			}
 		});
 		// Setting the text
-		btnHeap.setText("Insertion");
+		btnHeap.setText("Heap");
 		// Adding it to the panel
 		panel.add(btnHeap);
 		// Setting its position
@@ -243,7 +243,7 @@ public class SortGUI extends JFrame implements ActionListener {
 				btnReset.setVisible(true);
 			}
 		});
-		btnQuick.setText("Merge");
+		btnQuick.setText("Quick");
 		btnQuick.setForeground(darkGray);
 		btnQuick.setBackground(red);
 		btnQuick.setBounds(366, 464, 100, 30);

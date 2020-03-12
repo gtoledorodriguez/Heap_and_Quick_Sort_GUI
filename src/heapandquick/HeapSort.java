@@ -27,7 +27,8 @@ public class HeapSort {
 			max_heapify(arr, largest, heap_size);
 		}
 	}
-	static int build_max_heap (int[] arr){
+	static String build_max_heap (int[] arr){
+		String max_heap = "";
 		int heap_size = arr.length-1;
 		for (int i = arr.length / 2; i >= 0; i--) {
 			max_heapify(arr, i, heap_size);
@@ -35,17 +36,18 @@ public class HeapSort {
 			for (int j = 0; j < arr.length; j++) {
 				if (j == Math.pow(2, count) - 1) {
 					count = count + 1;
-					System.out.println("");
+					max_heap = max_heap + "\n";
 				}
-				System.out.print(arr[j] + " ");
+				max_heap = max_heap + arr[j] + " ";
 			}
-			System.out.println("");
+			max_heap = max_heap + "\n";	
 		}
-		System.out.println("max heap built.");
-		return heap_size;
+		max_heap = max_heap + "Max heap built. Now sorting.\n";
+		return max_heap;
 	}
-	static void heapsort(int[] arr) {
-		int heap_size = build_max_heap(arr);
+	static String heapsort(int[] arr) {
+		String result = build_max_heap(arr);
+		int heap_size = arr.length-1;
 		for (int i = arr.length-1; i > 0; i--) {	
 			int temp = arr[0];
 			arr[0] = arr[i];
@@ -56,19 +58,24 @@ public class HeapSort {
 			for (int j = 0; j < arr.length; j++) {
 				if (j == Math.pow(2, count) -1) {
 					count = count + 1;
-					System.out.println("");
+					result = result + "\n";
 				}
-				System.out.print(arr[j] + " ");
+				result = result + arr[j] + " ";
 			}
-			System.out.println("");
+			result = result + "\n";
 		}
+		result = result + "Sorted array:\n";
+		for (int i = 0; i < arr.length; i++) {
+			result = result + arr[i] + " ";
+		}
+		return result;
 	}
 	public static void main(String[] args) {
 		int[] heap2 = {3, 5, 2, 6, 1, 4};
 		int[] heap3 = {4, 1, 3, 2, 16, 9, 10, 14, 8, 7};
-		heapsort(heap2);
-		for (int i = 0; i < heap2.length; i++) {
-			System.out.print(heap2[i] + " ");
-		}
+		System.out.println(heapsort(heap3));
+		//for (int i = 0; i < heap2.length; i++) {
+		//	System.out.print(heap2[i] + " ");
+		//}
 	}
  }

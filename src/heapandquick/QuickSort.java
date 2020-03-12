@@ -97,7 +97,7 @@ public class QuickSort {
 		qs.sort();
 		long eTime = System.nanoTime();
 		int[] exa = qs.getValues();
-		
+		/*
 		//System.out.println("\nAfter\nLength: "+exa.length);
 		System.out.println("\nSorted List");
 		for(int i=0;i<exa.length;i++) {
@@ -106,6 +106,6 @@ public class QuickSort {
 		System.out.println("\n\nStart Time: "+ sTime + "\nEnd Time: "+ eTime +"\nTotal time: " + (eTime-sTime));
 		
 		System.out.println("\n"+qs.toString());
-		
+		*/
 	}
 }

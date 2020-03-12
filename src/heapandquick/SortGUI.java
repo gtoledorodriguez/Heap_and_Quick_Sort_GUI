@@ -26,8 +26,8 @@ public class SortGUI extends JFrame implements ActionListener {
 	// creating the panel
 	private JPanel panel;
 	// These are the buttons (insertion, merge, and reset)
-	private JButton btnInsertion;
-	private JButton btnMerge;
+	private JButton btnHeap;
+	private JButton btnQuick;
 	private JButton btnReset;
 	// Output messages to the user
 	private JLabel messageToUser;
@@ -92,7 +92,7 @@ public class SortGUI extends JFrame implements ActionListener {
 		messageToUser.setBounds(56, 424, 600, 30);
 		
 		// numbers is set to the random numbers array generated in Session
-		//numbers = new JTextArea(session.getNumbers());
+		numbers = new JTextArea();
 		// Adding the array to the panel
 		panel.add(numbers);
 		// Setting the font
@@ -172,9 +172,9 @@ public class SortGUI extends JFrame implements ActionListener {
 		panel.add(btnReset);
 		
 		// Making the insertion button
-		btnInsertion = new JButton();
+		btnHeap = new JButton();
 		// Addint a listener
-		btnInsertion.addMouseListener(new MouseAdapter() {
+		btnHeap.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				// Upon clicking the insertion button, the reset button becomes visible
@@ -182,17 +182,17 @@ public class SortGUI extends JFrame implements ActionListener {
 			}
 		});
 		// Setting the text
-		btnInsertion.setText("Insertion");
+		btnHeap.setText("Heap");
 		// Adding it to the panel
-		panel.add(btnInsertion);
+		panel.add(btnHeap);
 		// Setting its position
-		btnInsertion.setBounds(239, 464, 100, 30);
+		btnHeap.setBounds(239, 464, 100, 30);
 		// Setting the font color
-		btnInsertion.setForeground(darkGray);
+		btnHeap.setForeground(darkGray);
 		// Setting the background color
-		btnInsertion.setBackground(red);
+		btnHeap.setBackground(red);
 		// Adding the action listener
-		btnInsertion.addActionListener(new ActionListener() {
+		btnHeap.addActionListener(new ActionListener() {
 			// The event to be performed
 			public void actionPerformed(ActionEvent evt) {
 				// sortedSeq is the ArrayList containing an array that represents each step in the insertion sort
@@ -220,8 +220,8 @@ public class SortGUI extends JFrame implements ActionListener {
 			}
 		});
 		
-		btnMerge = new JButton();
-		btnMerge.addActionListener(new ActionListener() {
+		btnQuick = new JButton();
+		btnQuick.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//ArrayList sortedSeq = session.merge();
 				String s = "";
@@ -237,21 +237,21 @@ public class SortGUI extends JFrame implements ActionListener {
 				messageToUser.setText(session.getMessage());
 			}
 		});
-		btnMerge.addMouseListener(new MouseAdapter() {
+		btnQuick.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				btnReset.setVisible(true);
 			}
 		});
-		btnMerge.setText("Merge");
-		btnMerge.setForeground(darkGray);
-		btnMerge.setBackground(red);
-		btnMerge.setBounds(366, 464, 100, 30);
-		panel.add(btnMerge);
+		btnQuick.setText("Quick");
+		btnQuick.setForeground(darkGray);
+		btnQuick.setBackground(red);
+		btnQuick.setBounds(366, 464, 100, 30);
+		panel.add(btnQuick);
 		
 		// Adding the panel to the content pane
 		getContentPane().add(panel);
-		getRootPane().setDefaultButton(btnInsertion);
+		getRootPane().setDefaultButton(btnHeap);
 		// Setting the panel visible
 		panel.setVisible(true);
 	}

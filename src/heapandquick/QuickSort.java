@@ -23,7 +23,7 @@ public class QuickSort {
 	public void quickSort(int first, int last) {
 		//System.out.println("QuickSort");
 		if(first < last) {
-			for(int i=0;i<values.length;i++) {
+			for(int i=0;i<values.length;i++) { //Adds every step the algorithm is going on to a string to print in the 
 				sorting = sorting + "  "+values[i];
 				//System.out.print("  "+values[i]);
 			}
@@ -41,7 +41,7 @@ public class QuickSort {
 		int index = first-1;
 		int splitVal = values[last];
 		for(int i = first; i<last;i++) {
-			if(values[i]<splitVal) {
+			if(values[i]<splitVal) { //Checks moves the value so it is less than the split value
 				index++;
 				swap(index,i);
 			}
@@ -88,7 +88,7 @@ public class QuickSort {
 		int[] exa = qs.getValues();
 		
 		
-		//System.out.println("\n"+qs.toString());
+		System.out.println("\n"+qs.toString());
 		/**/
 	}
 }

@@ -6,8 +6,10 @@ public class QuickSort {
 	int [] values;
 	int splitVal;
 	int splitValL;
+	String sorting;
 	public QuickSort(int[] array) {
 		values = array;
+		sorting = "Unsorted List: \n";
 	}
 	public void sort() {
 		//System.out.println("Sort");
@@ -21,13 +23,15 @@ public class QuickSort {
 		//System.out.println("QuickSort");
 		if(first < last) {
 			for(int i=0;i<values.length;i++) {
+				sorting = sorting + "  "+values[i];
 				System.out.print("  "+values[i]);
 			}
+			sorting = sorting +"\n";
 			System.out.println();
 			splitVal = values[first];
 			splitValL = values[last-1];
-			System.out.println("SplitVal: " + splitVal);
-			System.out.println("SplitValL: " + splitValL);
+			//System.out.println("SplitVal: " + splitVal);
+			//System.out.println("SplitValL: " + splitValL);
 			
 			int splitPoint;
 			splitPoint = split(first, last);
@@ -66,6 +70,17 @@ public class QuickSort {
 		//System.out.println("getValues");
 		return values;
 	}
+	
+	public String toString() {
+		sorting = sorting + "Sorted List: \n";
+		for(int i=0;i<values.length;i++) {
+			sorting = sorting + "  "+values[i];
+			System.out.print("  "+values[i]);
+		}
+		sorting = sorting +"\n";
+		return sorting;
+		
+	}
 	public static void main(String[] args) {
 		int [] ex = {9,20,6,10,14,8,60,11};
 		QuickSort qs = new QuickSort(ex);
@@ -90,6 +105,7 @@ public class QuickSort {
 		}
 		System.out.println("\n\nStart Time: "+ sTime + "\nEnd Time: "+ eTime +"\nTotal time: " + (eTime-sTime));
 		
+		System.out.println("\n"+qs.toString());
 		
 	}
 }

@@ -13,7 +13,7 @@ public class Session implements Values{
 		 * constructor
 		 */
 		public Session() {
-			message = "Welcome! Click Insert or Merge to sort the above numbers.";
+			message = "Welcome! Click Heap and Quick to sort the above numbers.";
 			numbers = "";
 		}
 		/**
@@ -23,16 +23,20 @@ public class Session implements Values{
 		public String getMessage() {
 			return message;
 		}
+		/**
+		 * getNumbers() gets the array of values
+		 * @return the array of values
+		 */
 		public int[] getNumbers() {
 			return values;
 		}
 		/**
-		 * getNumbers() converts the random unsorted number array to a string
+		 * getNumbersString() converts the random unsorted number array to a string
 		 * @return numbers, random unsorted array
 		 */
 		public String getNumbersString() {
 			// resetting the welcome message
-			message = "Welcome! Click Insert or Merge to sort the above numbers.";
+			message = "Welcome! Click Heap and Quick to sort the above numbers.";
 			// resetting the numbers array
 			numbers = "";
 			// Calling the random numbers method
@@ -47,7 +51,6 @@ public class Session implements Values{
 		 * randomNumbers() calculates an array of random unsorted numbers and puts it in values
 		 * @return values, an array of randomly sorted numbers
 		 */
-		
 		public int[] randomNumbers() {
 			// New random
 			Random rand = new Random();
@@ -58,30 +61,4 @@ public class Session implements Values{
 		    // Returning values
 		    return values;
 		}
-		
-		/**
-		 * insertion() performs the insert method and returns it in ArrayList form
-		 * @return sortedSeq, an arrayList with integer arrays that represent every step in the insertion sort
-		 */
-		/*
-		public ArrayList<int[]> insertion() {
-			// Calling the insertionSort method
-			ArrayList<int[]> sortedSeq = InsertionSort.insertionSort();
-			// Resetting the message
-			message = "Click the reset button to start again.";
-			// Return
-			return sortedSeq;
-		}
-		public ArrayList merge() {
-			ArrayList msAL2 = MergeSort.guiSort();
-			
-		    //System.out.println("\nArray List");
-		    //for(int i = 0; i<msAL2.size();i++) {
-		    	//System.out.println(msAL2.get(i));
-		    //}
-			message = "Click the reset button to start again.";
-		    return msAL2;
-		}
-		*/
-
 }

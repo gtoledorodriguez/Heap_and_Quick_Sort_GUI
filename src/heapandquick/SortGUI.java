@@ -196,26 +196,10 @@ public class SortGUI extends JFrame implements ActionListener{
 		btnHeap.addActionListener(new ActionListener() {
 			// The event to be performed
 			public void actionPerformed(ActionEvent evt) {
-				// sortedSeq is the ArrayList containing an array that represents each step in the insertion sort
-				// It is calculated in session
-				//ArrayList<int[]> sortedSeq = session.insertion();
 				// s is the display string
 				String s = HeapSort.heapsort(session.getNumbers());
 				// This runs through the sortedSeq array
-				/*
-				for (int i = 0; i < sortedSeq.size(); i++) {
-					int[] n = sortedSeq.get(i);
-					// Adding each array
-					for (int j = 0; j < sortedSeq.get(i).length; j++) {
-						// Adding each value of each array 
-						s = s + String.valueOf(n[j]);
-					}
-					// New line after each array
-					s = s +"\n";
-					// Setting the text
-					numbers2.setText(s);
-				}	
-				*/
+				
 				numbers2.setText(s);
 				// Updating the message to the user
 				messageToUser.setText(session.getMessage());
@@ -225,17 +209,13 @@ public class SortGUI extends JFrame implements ActionListener{
 		btnQuick = new JButton();
 		btnQuick.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//ArrayList sortedSeq = session.merge();
+				// s is the display string
 				String s = "";
-				/*
-				for(int i = 0; i<sortedSeq.size(); i++) {
-					s = s + sortedSeq.get(i);
-					//System.out.println("I: " + i);
-				}*/
-				//System.out.println("sortedSeq.size()-1: " + (sortedSeq.size()-1));
-				//s = s + "\n\nSorted Array: \n" + sortedSeq.get(sortedSeq.size()-1);
+				QuickSort qs = new QuickSort(session.getNumbers());
+				qs.sort();
+				s = qs.toString();
 				numbers2.setText(s);
-				//ArrayList<String> msAL2 = session.merge();
+				// Updating the message to the user
 				messageToUser.setText(session.getMessage());
 			}
 		});

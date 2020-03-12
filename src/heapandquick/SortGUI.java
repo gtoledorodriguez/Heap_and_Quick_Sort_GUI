@@ -149,13 +149,15 @@ public class SortGUI extends JFrame implements ActionListener{
 		
 		// Making the reset button
 		btnReset = new JButton("Reset");
-		// Addint the action listener
+		// Adding the action listener
 		btnReset.addActionListener(new ActionListener() {
 			// setting the event to be performed
 			public void actionPerformed(ActionEvent e) {
 				// getting the new random unsorted array
 				//numbers.setText(session.getNumbers());
 				// emptying the TextArea
+				session.randomNumbers();
+				numbers.setText(session.getNumbersString());
 				numbers2.setText("");
 				// getting the new message to the user
 				messageToUser.setText(session.getMessage());

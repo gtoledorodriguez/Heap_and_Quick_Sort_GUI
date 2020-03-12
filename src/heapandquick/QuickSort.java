@@ -1,4 +1,5 @@
 package heapandquick;
+import java.util.Date;
 
 public class QuickSort {
 	int [] values;
@@ -17,7 +18,12 @@ public class QuickSort {
 	public void quickSort(int first, int last) {
 		//System.out.println("QuickSort");
 		if(first < last) {
+			for(int i=0;i<values.length;i++) {
+				System.out.print("  "+values[i]);
+			}
+			System.out.println();
 			splitVal = values[first];
+			System.out.println("SplitVal: " + splitVal);
 			int splitPoint;
 			splitPoint = split(first, last);
 			//System.out.println("SplitPoint: " + splitPoint);
@@ -56,15 +62,17 @@ public class QuickSort {
 	public static void main(String[] args) {
 		int [] ex = {9,20,6,10,14,8,60,11};
 		QuickSort qs = new QuickSort(ex);
+		Date d = new Date();
 		/*
 		System.out.println("\nBefore\nLength: "+ex.length);
 		*/
 		System.out.println("Unsorted List");
-		for(int i=0;i<ex.length;i++) {
+		/*for(int i=0;i<ex.length;i++) {
 			System.out.print("  "+ex[i]);
-		}
-		
+		}*/
+		long sTime = System.nanoTime();;
 		qs.sort();
+		long eTime = System.nanoTime();;
 		int[] exa = qs.getValues();
 		
 		//System.out.println("\nAfter\nLength: "+exa.length);
@@ -72,6 +80,8 @@ public class QuickSort {
 		for(int i=0;i<exa.length;i++) {
 			System.out.print("  "+exa[i]);
 		}
+		System.out.println("\n\nStart Time: "+ sTime + "\nEnd Time: "+ eTime +"\nTotal time: " + (eTime-sTime));
+		
 		
 	}
 }

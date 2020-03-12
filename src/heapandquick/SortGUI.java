@@ -212,8 +212,10 @@ public class SortGUI extends JFrame implements ActionListener{
 				// s is the display string
 				String s = "";
 				QuickSort qs = new QuickSort(session.getNumbers());
+				long sTime = System.nanoTime();
 				qs.sort();
-				s = qs.toString();
+				long eTime = System.nanoTime();
+				s = qs.toString()+"\nTotal Time: " + (eTime-sTime) + "ns";
 				numbers2.setText(s);
 				// Updating the message to the user
 				messageToUser.setText(session.getMessage());
